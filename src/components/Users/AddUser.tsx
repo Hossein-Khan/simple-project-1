@@ -47,11 +47,10 @@ const AddUser: React.FunctionComponent<AddUserProps> = function (props) {
     props.onUserAddition({ id: Math.random(), username: username, age: +age });
   };
 
-  const modalCloseHandler: React.MouseEventHandler<HTMLElement> = function (
-    event
-  ) {
-    setError(null);
-  };
+  const modalCloseHandler: React.MouseEventHandler<HTMLButtonElement> =
+    function (event) {
+      setError(null);
+    };
 
   return (
     <div>

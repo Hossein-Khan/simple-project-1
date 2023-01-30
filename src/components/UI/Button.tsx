@@ -4,7 +4,7 @@ import styles from "./Button.module.css";
 
 type ButtonProps = {
   type: "button" | "submit" | "reset" | undefined;
-  onClick?: React.MouseEventHandler<HTMLElement>;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   children?: React.ReactNode;
 };
 

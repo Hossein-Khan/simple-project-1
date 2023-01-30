@@ -6,7 +6,7 @@ import styles from "./ErrorModal.module.css";
 
 type ErrorModalProps = {
   error: ErrorModel;
-  onCloseModal: React.MouseEventHandler<HTMLElement>;
+  onCloseModal: React.MouseEventHandler<HTMLButtonElement | HTMLDivElement>;
 };
 
 const ErrorModal: React.FunctionComponent<ErrorModalProps> = function (props) {
@@ -22,7 +22,7 @@ const ErrorModal: React.FunctionComponent<ErrorModalProps> = function (props) {
         </div>
         <footer className={styles.actions}>
           <Button type="button" onClick={props.onCloseModal}>
-            Okey
+            Ok
           </Button>
         </footer>
       </Card>
