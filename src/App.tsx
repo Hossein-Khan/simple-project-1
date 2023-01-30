@@ -8,10 +8,7 @@ function App() {
 
   const addUserHandler = function (newUser: User) {
     setUsersList((prevState) => {
-      return [
-        ...prevState,
-        { id: newUser.id, username: newUser.username, age: newUser.age },
-      ];
+      return [...prevState, newUser];
     });
   };
 
