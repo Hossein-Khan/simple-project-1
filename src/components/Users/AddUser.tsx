@@ -54,9 +54,9 @@ const AddUser: React.FunctionComponent<AddUserProps> = function (props) {
 
   return (
     <div>
-      {error && (
+      {error ? (
         <ErrorModal error={error} onCloseModal={modalCloseHandler}></ErrorModal>
-      )}
+      ) : null}
       <Card className={styles.input}>
         <form onSubmit={formSubmitHandler}>
           <label htmlFor="username">Username</label>
