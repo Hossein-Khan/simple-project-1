@@ -61,7 +61,7 @@ const AddUser: React.FunctionComponent<AddUserProps> = function (props) {
               error={error}
               onCloseModal={modalCloseHandler}
             ></ErrorModal>,
-            document.getElementById("modal") as HTMLElement
+            document.getElementById("modal-root") as HTMLElement
           )
         : null}
       <Card className={styles.input}>

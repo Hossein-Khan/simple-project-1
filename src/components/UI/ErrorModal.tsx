@@ -15,7 +15,7 @@ const ErrorModal: React.FunctionComponent<ErrorModalProps> = function (props) {
     <Fragment>
       {createPortal(
         <div className={styles.backdrop} onClick={props.onCloseModal}></div>,
-        document.getElementById("backdrop") as HTMLElement
+        document.getElementById("backdrop-root") as HTMLElement
       )}
       <Card className={styles.modal}>
         <header className={styles.header}>
