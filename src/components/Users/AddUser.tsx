@@ -1,4 +1,5 @@
-import React, { MouseEventHandler, useState } from "react";
+import React, { Fragment, useState } from "react";
+import { createPortal } from "react-dom";
 import ErrorModel from "../../models/ErrorModel";
 import User from "../../models/UserModel";
 import Button from "../UI/Button";
@@ -53,10 +54,16 @@ const AddUser: React.FunctionComponent<AddUserProps> = function (props) {
     };
 
   return (
-    <div>
-      {error ? (
-        <ErrorModal error={error} onCloseModal={modalCloseHandler}></ErrorModal>
-      ) : null}
+    <Fragment>
+      {error
+        ? createPortal(
+            <ErrorModal
+              error={error}
+              onCloseModal={modalCloseHandler}
+            ></ErrorModal>,
+            document.getElementById("modal") as HTMLElement
+          )
+        : null}
       <Card className={styles.input}>
         <form onSubmit={formSubmitHandler}>
           <label htmlFor="username">Username</label>
@@ -76,7 +83,7 @@ const AddUser: React.FunctionComponent<AddUserProps> = function (props) {
           <Button type="submit">Add User</Button>
         </form>
       </Card>
-    </div>
+    </Fragment>
   );
 };
 
